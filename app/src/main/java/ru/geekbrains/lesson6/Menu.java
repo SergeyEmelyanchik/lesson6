@@ -11,21 +11,20 @@ public class Menu implements Parcelable {
     }
 
     public int getIndex() {
-        return Index;
+        return index;
     }
 
     public void setIndex(int index) {
-        Index = index;
+        this.index = index;
     }
 
     public static Creator<Menu> getCREATOR() {
         return CREATOR;
     }
 
-    private int Index;
 
     protected Menu(Parcel in) {
-        Index = in.readInt();
+        index = in.readInt();
     }
 
     public static final Creator<Menu> CREATOR = new Creator<Menu>() {
@@ -47,7 +46,7 @@ public class Menu implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(Index);
+        parcel.writeInt(index);
     }
 }
 
