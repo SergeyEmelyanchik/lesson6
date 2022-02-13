@@ -15,10 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState==null){
-            MenuFragment menuFragment = new MenuFragment();
+            MenuFragment menuFragment = MenuFragment.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.menu, menuFragment).commit();
             if (getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE){
-                MenuFragment noteFragment = new MenuFragment();
+                Menu defaultMenu = new Menu(0);
+                NoteFragment noteFragment = NoteFragment.newInstance(defaultMenu);
                 getSupportFragmentManager().beginTransaction().replace(R.id.note, noteFragment).commit();
 
             }

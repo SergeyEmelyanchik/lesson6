@@ -6,4 +6,9 @@
     android:background="@color/lightBrown"
     tools:context=".MenuFragment">
 
+    <TextView
+        android:id="@+id/notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </FrameLayout>

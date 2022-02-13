@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu">
+        <item>Факультет Android разработки</item>
+        <item>Java Core для Android</item>
+        <item>Android 1. Знакомство с платформой</item>
+        <item>Android на Kotlin</item>
+        <item>Android. Material design</item>
+    </string-array>
+    <integer-array name="note">
+        <item>@string/Beginning</item>
+        <item>@string/Java</item>
+        <item>@string/Android</item>
+        <item>@string/Kotlin</item>
+        <item>@string/Material</item>
+    </integer-array>
+
+</resources>
