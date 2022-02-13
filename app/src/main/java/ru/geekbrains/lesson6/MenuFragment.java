@@ -18,6 +18,7 @@ public class MenuFragment extends Fragment {
 
     public static final String CURRENT_MENU = "menu_current";
     private Menu currentMenu;
+
     public static MenuFragment newInstance() {
         MenuFragment fragment = new MenuFragment();
         return fragment;
@@ -33,7 +34,7 @@ public class MenuFragment extends Fragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable(CURRENT_MENU,currentMenu);
+        outState.putParcelable(CURRENT_MENU, currentMenu);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class MenuFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         if (savedInstanceState != null) {
             currentMenu = savedInstanceState.getParcelable(CURRENT_MENU);
-        }else{
+        } else {
             currentMenu = new Menu(0);
         }
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -55,7 +56,7 @@ public class MenuFragment extends Fragment {
         for (int i = 0; i < menu.length; i++) {
             String menuName = menu[i];
             TextView textView = new TextView(getContext());
-            textView.setTextSize(30f);
+            textView.setTextSize(25f);
             textView.setText(menuName);
             ((LinearLayout) view).addView(textView);
             final int finalI = i;

@@ -14,9 +14,10 @@ import androidx.fragment.app.Fragment;
 
 public class NoteFragment extends Fragment {
 
-public static final String ARG_MENU = "menu";
+    public static final String ARG_MENU = "menu";
 
-private Menu menu;
+    private Menu menu;
+
     public static NoteFragment newInstance(Menu menu) {
         NoteFragment fragment = new NoteFragment();
         Bundle bundle = new Bundle();
@@ -24,7 +25,6 @@ private Menu menu;
         fragment.setArguments(bundle);
         return fragment;
     }
-
 
 
     @Override
@@ -39,6 +39,6 @@ private Menu menu;
         menu = getArguments().getParcelable(ARG_MENU);
         TextView textView = view.findViewById(R.id.notes);
         TypedArray note = getResources().obtainTypedArray(R.array.note);
-        textView.setText (note.getResourceId(menu.getIndex(),R.id.note));
+        textView.setText(note.getResourceId(menu.getIndex(), R.id.note));
     }
 }
