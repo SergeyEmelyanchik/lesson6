@@ -16,7 +16,8 @@ import android.widget.TextView;
 
 public class MenuFragment extends Fragment {
 
-
+    public static final String CURRENT_MENU = "menu_current";
+    private Menu currentMenu;
     public static MenuFragment newInstance() {
         MenuFragment fragment = new MenuFragment();
         return fragment;
@@ -30,12 +31,28 @@ public class MenuFragment extends Fragment {
     }
 
     @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(CURRENT_MENU,currentMenu);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        if (savedInstanceState != null) {
+            currentMenu = savedInstanceState.getParcelable(CURRENT_MENU);
+        }else{
+            currentMenu = new Menu(0);
+        }
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            showLand();
+        }
+        initView(view);
+    }
 
+    private void initView(View view) {
         String[] menu = getResources().getStringArray(R.array.menu);
-
-        for (int i=0; i < menu.length; i++){
+        for (int i = 0; i < menu.length; i++) {
             String menuName = menu[i];
             TextView textView = new TextView(getContext());
             textView.setTextSize(30f);
@@ -45,18 +62,26 @@ public class MenuFragment extends Fragment {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Menu menu = new Menu(finalI);
-                    if (getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE){
-                        NoteFragment noteFragment = NoteFragment.newInstance(menu);
-                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.note, noteFragment).commit();
-                    }else{
+                    currentMenu = new Menu(finalI);
+                    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        showLand();
+                    } else {
+                        showPort();
 
-                        NoteFragment noteFragment = NoteFragment.newInstance(menu);
-                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.menu, noteFragment).addToBackStack("").commit();
                     }
                 }
             });
 
         }
+    }
+
+    private void showLand() {
+        NoteFragment noteFragment = NoteFragment.newInstance(currentMenu);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.note, noteFragment).commit();
+    }
+
+    private void showPort() {
+        NoteFragment noteFragment = NoteFragment.newInstance(currentMenu);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.menu, noteFragment).addToBackStack("").commit();
     }
 }
