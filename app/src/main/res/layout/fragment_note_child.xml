@@ -8,19 +8,16 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <FrameLayout
-        android:id="@+id/container_clild"
+    <TextView
+        android:id="@+id/notes"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkBrown"
+        android:textSize="20sp" />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/but_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back"/>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/but_back2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/back_en"/>
+
 </LinearLayout>
