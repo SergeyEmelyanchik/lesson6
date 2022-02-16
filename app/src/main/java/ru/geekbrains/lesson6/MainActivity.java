@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment backStackFragment = (Fragment) getSupportFragmentManager()
                 .findFragmentById(R.id.menu);
         if (backStackFragment != null && backStackFragment instanceof NoteFragment) {
-            onBackPressed();
+            getSupportFragmentManager().popBackStack();
         }
     }
 }

@@ -40,5 +40,21 @@ public class NoteFragment extends Fragment {
         TextView textView = view.findViewById(R.id.notes);
         TypedArray note = getResources().obtainTypedArray(R.array.note);
         textView.setText(note.getResourceId(menu.getIndex(), R.id.note));
+
+        getChildFragmentManager().beginTransaction().replace()
+
+
+        view.findViewById(R.id.but_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                requireActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+        view.findViewById(R.id.but_back2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager().popBackStack();
+            }
+        });
     }
 }
