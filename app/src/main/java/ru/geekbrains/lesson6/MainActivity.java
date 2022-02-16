@@ -1,12 +1,9 @@
 package ru.geekbrains.lesson6;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import android.content.res.Configuration;
 import android.os.Bundle;
 
-import java.util.concurrent.locks.Condition;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
 
