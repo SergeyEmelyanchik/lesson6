@@ -52,4 +52,6 @@ RecyclerView
     <string name="back_en">Back</string>
     <string name="about">about</string>
     <string name="exit">exit</string>
+    <string name="about_developers">about_developers</string>
+    <string name="toast">toast</string>
 </resources>

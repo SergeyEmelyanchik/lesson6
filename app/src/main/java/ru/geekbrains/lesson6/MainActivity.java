@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case (R.id.action_about):{
-
+                getSupportFragmentManager().beginTransaction().replace(R.id.menu,new AboutFragment()).addToBackStack("").commit();
                 return true;
             }
             case (R.id.action_exit): {
