@@ -20,7 +20,6 @@
             app:subtitleTextColor="#AAFFFFFF"
             app:title="@string/NameToolBar"
             app:titleTextColor="@color/lightBrown"
-
             />
     </com.google.android.material.appbar.AppBarLayout>
 

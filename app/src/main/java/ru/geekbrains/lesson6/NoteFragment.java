@@ -36,11 +36,12 @@ public class NoteFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
 
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case (R.id.action_toast):{
-                Toast.makeText(requireContext(),"Toast", Toast.LENGTH_LONG).show();
+        switch (item.getItemId()) {
+            case (R.id.action_toast): {
+                Toast.makeText(requireContext(), "Toast", Toast.LENGTH_LONG).show();
                 return true;
             }
         }
@@ -63,12 +64,15 @@ public class NoteFragment extends Fragment {
         getChildFragmentManager().beginTransaction().replace(R.id.container_clild, NoteChildFragment.newInstance(menu)).addToBackStack("").commit();
 
 
-        view.findViewById(R.id.but_back).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                requireActivity().getSupportFragmentManager().popBackStack();
-            }
-        });
+        view.findViewById(R.id.but_back).setOnClickListener(new View.OnClickListener(){
+
+
+
+                    @Override
+                    public void onClick(View view) {
+                        requireActivity().getSupportFragmentManager().popBackStack();
+                    }
+                });
         view.findViewById(R.id.but_back2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
