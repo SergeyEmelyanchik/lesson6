@@ -54,4 +54,6 @@ RecyclerView
     <string name="exit">exit</string>
     <string name="about_developers">about_developers</string>
     <string name="toast">toast</string>
+    <string name="NameToolBar">ToolBar</string>
+    <string name="MainScreen">Main screen</string>
 </resources>

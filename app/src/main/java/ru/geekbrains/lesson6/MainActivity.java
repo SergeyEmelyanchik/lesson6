@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
             MenuFragment menuFragment = MenuFragment.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.menu, menuFragment).commit();
         }
+        Toolbar toolbar = findViewById(R.id.toolbar); // добавляем свой тул бар в качестве тул бара андройд
+        setSupportActionBar(toolbar);
     }
 
     @Override
