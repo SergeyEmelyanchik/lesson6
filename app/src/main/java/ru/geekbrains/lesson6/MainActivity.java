@@ -1,7 +1,10 @@
 package ru.geekbrains.lesson6;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -16,6 +19,27 @@ public class MainActivity extends AppCompatActivity {
             MenuFragment menuFragment = MenuFragment.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.menu, menuFragment).commit();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case (R.id.action_about):{
+
+                return true;
+            }
+            case (R.id.action_exit): {
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

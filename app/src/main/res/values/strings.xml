@@ -50,4 +50,6 @@ RecyclerView
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="back">Назад</string>
     <string name="back_en">Back</string>
+    <string name="about">about</string>
+    <string name="exit">exit</string>
 </resources>
