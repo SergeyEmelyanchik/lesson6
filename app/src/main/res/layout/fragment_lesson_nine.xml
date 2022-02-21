@@ -16,4 +16,12 @@
         android:text="Toast View"
         android:textSize="25sp" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/but_snack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/architects_daughter"
+        android:text="Snack Bar"
+        android:textSize="25sp" />
+
 </LinearLayout>

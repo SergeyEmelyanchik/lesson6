@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import ru.geekbrains.lesson6.R;
 
 public class LessonNineFragment extends Fragment {
@@ -17,7 +19,7 @@ public class LessonNineFragment extends Fragment {
     public static LessonNineFragment newInstance() {
         LessonNineFragment fragment = new LessonNineFragment();
         return fragment;
-}
+    }
 
     @Nullable
     @Override
@@ -28,11 +30,19 @@ public class LessonNineFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.but_toast).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(requireContext(),"Рекламма", Toast.LENGTH_LONG).show();
-            }
-        });
+        initView(view);
+
+    }
+
+    void initView(View view) {
+        view.findViewById(R.id.but_toast).setOnClickListener(v -> showToast());
+        view.findViewById(R.id.but_snack).setOnClickListener(v -> showSnackBar(view));
+    }
+
+    void showToast() {
+        Toast.makeText(requireContext(), "Реклама Toast", Toast.LENGTH_LONG).show();
+    }
+    void showSnackBar(View view) {
+         Snackbar.make(view, "Реклама SnackBar", Snackbar.LENGTH_LONG).show();
     }
 }
