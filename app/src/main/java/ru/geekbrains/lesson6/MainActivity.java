@@ -3,6 +3,7 @@ package ru.geekbrains.lesson6;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,10 @@ import androidx.fragment.app.Fragment;
 import ru.geekbrains.lesson9.LessonNineFragment;
 
 public class MainActivity extends AppCompatActivity {
+
+    public void onDialogResult(String message) {
+        Toast.makeText(this, "message", Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

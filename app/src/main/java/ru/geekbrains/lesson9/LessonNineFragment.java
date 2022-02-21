@@ -63,33 +63,14 @@ public class LessonNineFragment extends Fragment {
     }
 
     void showDialogExit() {
-        new AlertDialog.Builder(requireContext())
-                .setTitle("Выход")
-                .setMessage("Вы уверены что хотите выйти?")
-                .setPositiveButton("Да", (dialog, which) -> {
-                    showToast("Да");
-                    System.exit(0);
-                })
-                .setNegativeButton("Нет", (dialog, which) -> {
-                    showToast("Нет");
-                })
-                .show();
+        new MyDialogExitFragment().show(getActivity().getSupportFragmentManager(),"");
 
 
     }
 
     void showDialog() {
-        View view = getLayoutInflater().inflate(R.layout.dialog_exit, null);
-        AlertDialog alertDialog = new AlertDialog.Builder(requireContext())
-                .setTitle("Название диалогоа")
-                .setMessage("собственно сам диалог")
-                .setView(view)
-                .show();
-        view.findViewById(R.id.but_DialogView).setOnClickListener(v -> {
-            EditText editText = view.findViewById(R.id.editTextDialogView);
-            showToast(editText.getText().toString());
-            alertDialog.dismiss();
-        });
+        new MyDialogFragment().show(getActivity().getSupportFragmentManager(),"");
+
 
     }
 }

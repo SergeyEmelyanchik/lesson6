@@ -38,6 +38,7 @@
         android:fontFamily="@font/architects_daughter"
         android:text="@string/dialog"
         android:textSize="25sp" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/but_exit"
         android:layout_width="match_parent"
