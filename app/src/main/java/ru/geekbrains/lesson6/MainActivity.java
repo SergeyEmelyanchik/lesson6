@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.menu, new AboutFragment()).addToBackStack("").commit();
                 return true;
             }
+
             case (R.id.action_exit): {
                 finish();
                 return true;

@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    android:background="@color/darkBrown"
     tools:context=".MenuFragment">
 
     <com.google.android.material.button.MaterialButton
@@ -13,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/architects_daughter"
-        android:text="Toast View"
+        android:text="@string/toast_view"
         android:textSize="25sp" />
 
     <com.google.android.material.button.MaterialButton
@@ -21,7 +20,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/architects_daughter"
-        android:text="Snack Bar"
+        android:text="@string/snack_bar"
+        android:textSize="25sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/but_snackWithAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/architects_daughter"
+        android:text="@string/snack_barwithaction"
+        android:textSize="25sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/but_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/architects_daughter"
+        android:text="@string/dialog"
+        android:textSize="25sp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/but_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/architects_daughter"
+        android:text="@string/exit"
         android:textSize="25sp" />
 
 </LinearLayout>
