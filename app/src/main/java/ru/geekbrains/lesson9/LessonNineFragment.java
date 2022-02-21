@@ -41,6 +41,7 @@ public class LessonNineFragment extends Fragment {
         view.findViewById(R.id.but_snack).setOnClickListener(v -> showSnackBar(view));
         view.findViewById(R.id.but_snackWithAction).setOnClickListener(v -> showSnackBarWithAction(view));
         view.findViewById(R.id.but_dialog).setOnClickListener(v -> showDialog());
+        view.findViewById(R.id.but_bottomsheet).setOnClickListener(v -> showBottomSheetDialog());
         view.findViewById(R.id.but_exit).setOnClickListener(v -> showDialogExit());
     }
 
@@ -63,13 +64,17 @@ public class LessonNineFragment extends Fragment {
     }
 
     void showDialogExit() {
-        new MyDialogExitFragment().show(getActivity().getSupportFragmentManager(),"");
+        new MyDialogExitFragment().show(getActivity().getSupportFragmentManager(), "");
 
+    }
+
+    void showBottomSheetDialog() {
+        new MyBottomSheetDialogFragment().show(getActivity().getSupportFragmentManager(),"");
 
     }
 
     void showDialog() {
-        new MyDialogFragment().show(getActivity().getSupportFragmentManager(),"");
+        new MyDialogFragment().show(getActivity().getSupportFragmentManager(), "");
 
 
     }

@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +18,7 @@ public class MyDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        View view = getLayoutInflater().inflate(R.layout.dialog_exit, null);
+        View view = getLayoutInflater().inflate(R.layout.dialog_view, null);
         AlertDialog alertDialog = new AlertDialog.Builder(requireContext())
                 .setTitle("Как вас зовут?")
                 .setMessage("В поле ниже введите ваше имя")
