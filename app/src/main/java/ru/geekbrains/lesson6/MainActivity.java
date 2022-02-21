@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import ru.geekbrains.lesson9.LessonNineFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,8 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            MenuFragment menuFragment = MenuFragment.newInstance();
+            /*MenuFragment menuFragment = MenuFragment.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.menu, menuFragment).commit();
+       */
+            LessonNineFragment lessonNineFragment = LessonNineFragment.newInstance();
+            getSupportFragmentManager().beginTransaction().replace(R.id.menu, lessonNineFragment).commit();
+
+
         }
         Toolbar toolbar = findViewById(R.id.toolbar); // добавляем свой тул бар в качестве тул бара андройд
         setSupportActionBar(toolbar);
@@ -32,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case (R.id.action_about):{
-                getSupportFragmentManager().beginTransaction().replace(R.id.menu,new AboutFragment()).addToBackStack("").commit();
+        switch (item.getItemId()) {
+            case (R.id.action_about): {
+                getSupportFragmentManager().beginTransaction().replace(R.id.menu, new AboutFragment()).addToBackStack("").commit();
                 return true;
             }
             case (R.id.action_exit): {
