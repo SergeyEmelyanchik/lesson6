@@ -62,4 +62,5 @@ RecyclerView
     <string name="snack_barwithaction">Snack BarWithAction</string>
     <string name="dialog">dialog</string>
     <string name="bottom_sheet_dialog">Bottom Sheet Dialog</string>
+    <string name="push_notification">Push Notification</string>
 </resources>

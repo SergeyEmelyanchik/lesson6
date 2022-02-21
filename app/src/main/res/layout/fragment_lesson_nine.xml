@@ -46,6 +46,13 @@
         android:fontFamily="@font/architects_daughter"
         android:text="@string/bottom_sheet_dialog"
         android:textSize="25sp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/but_PushNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/architects_daughter"
+        android:text="@string/push_notification"
+        android:textSize="25sp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/but_exit"
